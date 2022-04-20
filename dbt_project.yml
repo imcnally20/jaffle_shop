@@ -3,7 +3,7 @@ name: 'jaffle_shop'
 config-version: 2
 version: '0.1'
 
-profile: 'jaffle_shop'
+profile: 'jaffle'
 
 model-paths: ["models"]
 seed-paths: ["seeds"]
@@ -11,11 +11,14 @@ test-paths: ["tests"]
 analysis-paths: ["analysis"]
 macro-paths: ["macros"]
 
-target-path: "target"
-clean-targets:
-    - "target"
-    - "dbt_modules"
-    - "logs"
+log-path: '/tmp/dbt_log/'
+target-path: "/tmp/dbt_target/"  # directory which will store compiled SQL files
+modules-path: "/tmp/dbt_modules/"
+
+clean-targets:         # directories to be removed by `dbt clean`
+    - "/tmp/dbt_target/"
+    - "/tmp/dbt_modules/"
+    - "/tmp/dbt_log/"
 
 require-dbt-version: [">=1.0.0", "<2.0.0"]
 

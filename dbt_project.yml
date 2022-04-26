@@ -13,11 +13,11 @@ macro-paths: ["macros"]
 
 log-path: '/tmp/dbt_log/'
 target-path: "/tmp/dbt_target/"  # directory which will store compiled SQL files
-packages-path: "/tmp/dbt_packages/"
+# packages-path: "/tmp/dbt_packages/"
 
 clean-targets:         # directories to be removed by `dbt clean`
     - "/tmp/dbt_target/"
-    - "/tmp/dbt_packages/"
+    # - "/tmp/dbt_packages/"
     - "/tmp/dbt_log/"
 
 require-dbt-version: [">=1.0.0", "<2.0.0"]
